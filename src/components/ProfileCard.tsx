@@ -57,7 +57,45 @@ const ProfileCard = ({ user }: ProfileCardProps) => {
     },
   };
 
-  // ... (Los variants 'containerVariants', 'itemVariants', 'profileVariants' SE MANTIENEN IGUAL) ...
+  // 5. Variants de Framer Motion (FALTANTES)
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 12,
+      },
+    },
+  };
+
+  const profileVariants: Variants = {
+    hidden: { scale: 0, rotate: -180 },
+    visible: {
+      scale: 1,
+      rotate: 0,
+      transition: {
+        type: "spring",
+        stiffness: 200,
+        damping: 20,
+        delay: 0.1,
+      },
+    },
+  };
+  // ====== FIN DEL BLOQUE A AGREGAR ======
 
   return (
     <>
