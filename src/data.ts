@@ -44,24 +44,24 @@ export const users: User[] = [
     ],
   },
   {
-    id: "maria",
-    name: "MARÍA GARCÍA",
-    profession: "Diseñadora UX/UI",
-    photo: "/max.jpeg",
+    id: "carmen",
+    name: "CARMEN HUAMÁN",
+    profession: "Wedding Planner",
+    photo: "/carmen.jpeg",
     socialLinks: [
       {
         name: "Facebook",
-        url: "https://www.facebook.com/max.palaciostorres",
+        url: "https://www.facebook.com/share/1AKGhB8GwV/",
         icon: "Facebook",
       },
       {
         name: "Instagram",
-        url: "https://www.instagram.com/maxpalaciostorres/",
+        url: "https://www.instagram.com/carmenhuamanplanner?igsh=MWhranI4NXI3dnh1bA==",
         icon: "Instagram",
       },
       {
         name: "TikTok",
-        url: "https://www.tiktok.com/@maxpalaciostorres",
+        url: "https://www.tiktok.com/@carmenhuamanplanner?_r=1&_t=ZS-936uxG3W3TI",
         icon: "TikTok",
       },
       {
@@ -72,8 +72,8 @@ export const users: User[] = [
     ],
   },
   {
-    id: "carlos",
-    name: "CARLOS LÓPEZ",
+    id: "jhivan",
+    name: "JHIVAN LÓPEZ",
     profession: "Marketing Digital",
     photo: "/max.jpeg",
     socialLinks: [
