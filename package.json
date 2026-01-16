@@ -5,7 +5,8 @@
   "type": "module",
   "engines": {                       // <-- ESTE BLOQUE ES CLAVE
     "node": ">=18.0.0",              // Versión exacta
-    "npm": ">=9.0.0"                 // Puedes especificar npm también
+    "npm": ">=9.0.0"   
+  },// Puedes especificar npm también
   "scripts": {
     "dev": "vite",
     "build": "vite build",
