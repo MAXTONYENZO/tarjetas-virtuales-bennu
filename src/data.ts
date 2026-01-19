@@ -1,5 +1,3 @@
-// src/data.ts
-
 // Define el tipo de dato para un usuario
 export interface User {
   id: string; // Para la ruta (ej: 'max')
@@ -41,6 +39,11 @@ export const users: User[] = [
         url: "https://www.linkedin.com/in/max-tony-enzo-palacios-torres-7032b72bb/",
         icon: "LinkedIn",
       },
+      {
+        name: "WhatsApp",
+        url: "https://wa.me/51999957234?text=¡Hola%20Max!%20Te%20contacto%20desde%20tu%20tarjeta%20virtual.",
+        icon: "WhatsApp",
+      },
     ],
   },
   {
@@ -51,51 +54,61 @@ export const users: User[] = [
     socialLinks: [
       {
         name: "Facebook",
-        url: "https://www.facebook.com/share/1AKGhB8GwV/",
+        url: "https://www.facebook.com/carmenhuamanweddingplanner",
         icon: "Facebook",
       },
       {
         name: "Instagram",
-        url: "https://www.instagram.com/carmenhuamanplanner?igsh=MWhranI4NXI3dnh1bA==",
+        url: "https://www.instagram.com/carmenhuamanplanner/",
         icon: "Instagram",
       },
       {
         name: "TikTok",
-        url: "https://www.tiktok.com/@carmenhuamanplanner?_r=1&_t=ZS-936uxG3W3TI",
+        url: "https://www.tiktok.com/@carmenhuamanplanner",
         icon: "TikTok",
       },
       {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/max-tony-enzo-palacios-torres-7032b72bb/",
+        url: "https://www.linkedin.com/in/carmen-huaman-planner-699073216/",
         icon: "LinkedIn",
+      },
+      {
+        name: "WhatsApp",
+        url: "https://wa.me/51998599594?text=¡Hola%20Carmen!%20Te%20contacto%20desde%20tu%20tarjeta%20virtual.",
+        icon: "WhatsApp",
       },
     ],
   },
   {
     id: "jhivan",
-    name: "JHIVAN LÓPEZ",
-    profession: "Marketing Digital",
-    photo: "/max.jpeg",
+    name: "JHIVAN CENTENO",
+    profession: "Director creativo",
+    photo: "/jhivan.jpg",
     socialLinks: [
       {
         name: "Facebook",
-        url: "https://www.facebook.com/max.palaciostorres",
+        url: "https://www.facebook.com/jhivan.centeno.2025", // Cambia esto
         icon: "Facebook",
       },
       {
         name: "Instagram",
-        url: "https://www.instagram.com/maxpalaciostorres/",
+        url: "https://www.instagram.com/jhivan.centeno/", // Cambia esto
         icon: "Instagram",
       },
       {
         name: "TikTok",
-        url: "https://www.tiktok.com/@maxpalaciostorres",
+        url: "https://www.tiktok.com/@ivancenteno234", // Cambia esto
         icon: "TikTok",
       },
       {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/max-tony-enzo-palacios-torres-7032b72bb/",
+        url: "https://www.linkedin.com/in/carmen-huaman-planner-699073216/", // Cambia esto
         icon: "LinkedIn",
+      },
+      {
+        name: "WhatsApp",
+        url: "https://wa.me/51983114122?text=¡Hola%20Jhivan!%20Te%20contacto%20desde%20tu%20tarjeta%20virtual.",
+        icon: "WhatsApp",
       },
     ],
   },
