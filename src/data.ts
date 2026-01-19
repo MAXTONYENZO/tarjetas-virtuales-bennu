@@ -49,7 +49,7 @@ export const users: User[] = [
   {
     id: "carmen",
     name: "CARMEN HUAMÁN",
-    profession: "Wedding Planner",
+    profession: "Wedding Planner ",
     photo: "/carmen.jpeg",
     socialLinks: [
       {
@@ -82,7 +82,7 @@ export const users: User[] = [
   {
     id: "jhivan",
     name: "JHIVAN CENTENO",
-    profession: "Director creativo",
+    profession: "Director creativo ",
     photo: "/jhivan.jpg",
     socialLinks: [
       {
