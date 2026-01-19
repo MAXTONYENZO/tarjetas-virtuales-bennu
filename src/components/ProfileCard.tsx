@@ -3,6 +3,7 @@ import { Facebook, Instagram, Linkedin, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import ShareModal from "./ShareModal.tsx";
 import ThemeToggle from "./ThemeToggle.tsx";
+import type { User } from "../data"; // Importa el tipo User
 
 // TikTok icon (not in lucide)
 const TikTokIcon = ({ className }: { className?: string }) => (
@@ -16,53 +17,45 @@ const TikTokIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-interface SocialLink {
-  name: string;
-  url: string;
-  icon: React.ReactNode;
-  bgColor: string;
-  hoverShadow: string;
+// Define las props que recibirá el componente
+interface ProfileCardProps {
+  user: User; // Recibe un objeto 'user'
 }
 
-const socialLinks: SocialLink[] = [
-  {
-    name: "Facebook",
-    url: "https://www.facebook.com/max.palaciostorres",
-    icon: <Facebook className="w-6 h-6" />,
+// Mapa para renderizar el icono correcto basado en el nombre
+const iconMap: Record<string, React.ReactNode> = {
+  Facebook: <Facebook className="w-6 h-6" />,
+  Instagram: <Instagram className="w-6 h-6" />,
+  TikTok: <TikTokIcon className="w-6 h-6" />,
+  LinkedIn: <Linkedin className="w-6 h-6" />,
+  WhatsApp: <MessageCircle className="w-6 h-6" />,
+};
+
+// Mapa para los estilos de cada red social
+const styleMap: Record<string, { bgColor: string; hoverShadow: string }> = {
+  Facebook: {
     bgColor: "bg-[#1877F2]",
     hoverShadow: "hover:shadow-[0_10px_40px_-10px_#1877F2]",
   },
-  {
-    name: "Instagram",
-    url: "https://www.instagram.com/maxpalaciostorres/",
-    icon: <Instagram className="w-6 h-6" />,
+  Instagram: {
     bgColor: "bg-gradient-to-r from-[#f09433] via-[#dc2743] to-[#bc1888]",
     hoverShadow: "hover:shadow-[0_10px_40px_-10px_#dc2743]",
   },
-  {
-    name: "TikTok",
-    url: "https://www.tiktok.com/@maxpalaciostorres",
-    icon: <TikTokIcon className="w-6 h-6" />,
+  TikTok: {
     bgColor: "bg-gradient-to-r from-[#00f2ea] via-[#000000] to-[#ff0050]",
     hoverShadow: "hover:shadow-[0_10px_40px_-10px_#ff0050]",
   },
-  {
-    name: "LinkedIn",
-    url: "https://www.linkedin.com/in/max-tony-enzo-palacios-torres-7032b72bb/",
-    icon: <Linkedin className="w-6 h-6" />,
+  LinkedIn: {
     bgColor: "bg-[#0A66C2]",
     hoverShadow: "hover:shadow-[0_10px_40px_-10px_#0A66C2]",
   },
-  // === BOTÓN DE WHATSAPP ===
-  {
-    name: "WhatsApp",
-    url: "https://wa.me/51999957234?text=¡Hola%20Max!%20Te%20contacto%20desde%20tu%20tarjeta%20virtual.",
-    icon: <MessageCircle className="w-6 h-6" />,
+  WhatsApp: {
     bgColor: "bg-[#25D366]",
     hoverShadow: "hover:shadow-[0_10px_40px_-10px_#25D366]",
   },
-];
+};
 
+// Variants de Framer Motion
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -101,7 +94,7 @@ const profileVariants: Variants = {
   },
 };
 
-const ProfileCard = () => {
+const ProfileCard = ({ user }: ProfileCardProps) => {
   const [isShareOpen, setIsShareOpen] = useState(false);
 
   return (
@@ -129,9 +122,10 @@ const ProfileCard = () => {
           >
             <div className="profile-ring animate-float">
               <div className="w-32 h-32 rounded-full overflow-hidden bg-secondary">
+                {/* Usa la foto del usuario */}
                 <img
-                  src="/max.jpeg"
-                  alt="Foto de perfil"
+                  src={user.photo}
+                  alt={`Foto de ${user.name}`}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -140,41 +134,44 @@ const ProfileCard = () => {
 
           {/* Name and Profession */}
           <motion.div className="text-center mb-8" variants={itemVariants}>
+            {/* Usa el nombre y profesión del usuario */}
             <h1 className="text-3xl font-bold text-foreground mb-2">
-              MAX PALACIOS
+              {user.name}
             </h1>
-            <p className="text-muted-foreground text-lg">
-              Desarrollador & Creador Digital
-            </p>
+            <p className="text-muted-foreground text-lg">{user.profession}</p>
           </motion.div>
 
           {/* Social Links */}
           <motion.div className="space-y-3" variants={containerVariants}>
-            {socialLinks.map((link, index) => (
-              <div key={link.name}>
-                {/* Línea divisoria antes del botón de WhatsApp */}
-                {link.name === "WhatsApp" && (
-                  <div className="relative my-4">
-                    <hr className="border-border" />
-                    <span className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-card px-3 text-sm text-muted-foreground">
-                      Contacto directo
-                    </span>
-                  </div>
-                )}
-                <motion.a
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`social-button w-full ${link.bgColor} ${link.hoverShadow}`}
-                  variants={itemVariants}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  {link.icon}
-                  <span className="text-base">{link.name}</span>
-                </motion.a>
-              </div>
-            ))}
+            {/* Mapea los enlaces sociales del usuario */}
+            {user.socialLinks.map((link) => {
+              const style = styleMap[link.name];
+              return (
+                <div key={link.name}>
+                  {/* Línea divisoria antes del botón de WhatsApp */}
+                  {link.name === "WhatsApp" && (
+                    <div className="relative my-4">
+                      <hr className="border-border" />
+                      <span className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-card px-3 text-sm text-muted-foreground">
+                        Contacto directo
+                      </span>
+                    </div>
+                  )}
+                  <motion.a
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`social-button w-full ${style.bgColor} ${style.hoverShadow}`}
+                    variants={itemVariants}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    {iconMap[link.name]}
+                    <span className="text-base">{link.name}</span>
+                  </motion.a>
+                </div>
+              );
+            })}
           </motion.div>
 
           {/* Share Button */}
