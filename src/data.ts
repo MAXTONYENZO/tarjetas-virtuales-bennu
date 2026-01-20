@@ -17,7 +17,7 @@ export const users: User[] = [
     id: "max",
     name: "MAX PALACIOS",
     profession: "Desarrollador & Creador Digital",
-    photo: "/max.jpeg", //
+    photo: "/max.jpg", //
     socialLinks: [
       {
         name: "Facebook",
