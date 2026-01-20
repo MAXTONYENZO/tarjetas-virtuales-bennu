@@ -17,7 +17,7 @@ export const users: User[] = [
     id: "max",
     name: "MAX PALACIOS",
     profession: "Desarrollador & Creador Digital",
-    photo: "/max.jpeg", // Asegúrate de que esta imagen esté en la carpeta 'public'
+    photo: "/max.jpeg", //
     socialLinks: [
       {
         name: "Facebook",
@@ -87,27 +87,60 @@ export const users: User[] = [
     socialLinks: [
       {
         name: "Facebook",
-        url: "https://www.facebook.com/jhivan.centeno.2025", // Cambia esto
+        url: "https://www.facebook.com/bennuproductora", // Cambia esto
         icon: "Facebook",
       },
       {
         name: "Instagram",
-        url: "https://www.instagram.com/jhivan.centeno/", // Cambia esto
+        url: "https://www.instagram.com/bennuproductora/", // Cambia esto
         icon: "Instagram",
       },
       {
         name: "TikTok",
-        url: "https://www.tiktok.com/@ivancenteno234", // Cambia esto
+        url: "https://www.tiktok.com/@bennu_productora", // Cambia esto
         icon: "TikTok",
       },
       {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/carmen-huaman-planner-699073216/", // Cambia esto
+        url: "https://www.linkedin.com/company/kmjk/", // Cambia esto
         icon: "LinkedIn",
       },
       {
         name: "WhatsApp",
         url: "https://wa.me/51983114122?text=¡Hola%20Jhivan!%20Te%20contacto%20desde%20tu%20tarjeta%20virtual.",
+        icon: "WhatsApp",
+      },
+    ],
+  },
+  {
+    id: "roberto",
+    name: "ROBERTO PINO",
+    profession: "Director de eventos ",
+    photo: "/roberto.jpeg",
+    socialLinks: [
+      {
+        name: "Facebook",
+        url: "https://www.facebook.com/bennuproductora",
+        icon: "Facebook",
+      },
+      {
+        name: "Instagram",
+        url: "https://www.instagram.com/bennuproductora/",
+        icon: "Instagram",
+      },
+      {
+        name: "TikTok",
+        url: "https://www.tiktok.com/@bennu_productora",
+        icon: "TikTok",
+      },
+      {
+        name: "LinkedIn",
+        url: "https://www.linkedin.com/company/kmjk/",
+        icon: "LinkedIn",
+      },
+      {
+        name: "WhatsApp",
+        url: "https://wa.me/51998993610?text=¡Hola%20Max!%20Te%20contacto%20desde%20tu%20tarjeta%20virtual.",
         icon: "WhatsApp",
       },
     ],
