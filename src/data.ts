@@ -140,7 +140,7 @@ export const users: User[] = [
       },
       {
         name: "WhatsApp",
-        url: "https://wa.me/51998993610?text=¡Hola%20Max!%20Te%20contacto%20desde%20tu%20tarjeta%20virtual.",
+        url: "https://wa.me/51998993610?text=¡Hola%20Roberto!%20Te%20contacto%20desde%20tu%20tarjeta%20virtual.",
         icon: "WhatsApp",
       },
     ],
